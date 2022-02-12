@@ -1,8 +1,7 @@
 import React, {useState} from "react";
-import Class from './components/Class/Class';
+import Class from '../Class/Class';
 
-function Home(props) 
-{
+function Home(props) {
     const [value, setValue] = useState('');
     const [favouriteClasses, setClasses] = useState([]);
 
@@ -20,12 +19,11 @@ function Home(props)
         console.log(favouriteClasses);
     }
 
-    return
-    {
+    return (
         <div>
             <h1>Hello World!</h1>
             <form onSubmit={handleSubmit}>
-                <label>Add Favorite Class</label>
+                <label>Add Favorite Class: </label>
                 <input type="text" value={value} onChange={handleChange}></input>
                 <button type="submit">Add Class</button>
             </form>
@@ -36,7 +34,7 @@ function Home(props)
                 )}
             </div>
         </div>
-    }
+    )
 }
 
 export default Home;
