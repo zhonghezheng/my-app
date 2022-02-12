@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Class from '../Class/Class';
+import './Home.css'
 
 function Home(props) {
     const [value, setValue] = useState('');
@@ -20,7 +21,7 @@ function Home(props) {
     }
 
     return (
-        <div>
+        <div className = "homeStyle">
             <h1>Hello World!</h1>
             <form onSubmit={handleSubmit}>
                 <label>Add Favorite Class: </label>
