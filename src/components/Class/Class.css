@@ -1,7 +1,7 @@
-.class{
+.information{
     width: 100 px;
-    height: 100px;
+    height: auto;
+    padding-top: 5px;
+    padding-bottom: 10px;
     background-color: burlywood;
-    
-
 }
