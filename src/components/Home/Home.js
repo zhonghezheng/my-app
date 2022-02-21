@@ -36,6 +36,8 @@ function Home(props) {
                 )}
             </div>
 
+            <p>With  Graphql</p>
+            
             <div>
                 {favouriteClasses.map((favClass)=>
                     <ClassGraphQL name={favClass} key={favClass}></ClassGraphQL>

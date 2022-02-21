@@ -1,9 +1,9 @@
 import './Class.css'; 
 import React, {useState, useEffect} from 'react';
-import { findRenderedDOMComponentWithClass } from 'react-dom/cjs/react-dom-test-utils.production.min';
 
 function ClassGraphQL(props) {
     const [classInfo, setClassInfo] = useState({});
+
     const url = "https://api.peterportal.org/graphql"
     useEffect(() => {
         const fetchData = async() => {
@@ -11,6 +11,9 @@ function ClassGraphQL(props) {
                 query{
                     course(id:"${props.name}"){
                         title
+                        instructor_history {
+                            name
+                        }
                         department_name
                         description
                     }
@@ -24,19 +27,21 @@ function ClassGraphQL(props) {
                 }
             });
             const data = await response.json();
-            console.log(data);
+            console.log(data.data.course.instructor_history);
             setClassInfo(data.data.course);
         }
         fetchData();
     }, [props.name]);
     let info;
-    console.log(classInfo)
+    console.log(classInfo.instructor_history)
+
+
 
     if(classInfo){
         info = <div className="information">
-        <p>{props.name}</p>
+        <p> {props.name}</p>
         <p> {classInfo.title} </p>
-        <p>{classInfo.department_name}</p>
+        <p> {classInfo.deparment} </p>
         <p>{classInfo.description}</p>
         </div>
     }
