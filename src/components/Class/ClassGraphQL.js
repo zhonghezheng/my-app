@@ -33,9 +33,7 @@ function ClassGraphQL(props) {
         fetchData();
     }, [props.name]);
     let info;
-    console.log(classInfo.instructor_history)
-
-
+    console.log(classInfo.instructor_history);
 
     if(classInfo){
         info = <div className="information">
