@@ -33,19 +33,18 @@ function ClassGraphQL(props) {
         fetchData();
     }, [props.name]);
     let info;
-    console.log(classInfo.instructor_history);
+    console.log(classInfo);
 
-    if(classInfo){
+    if (classInfo.title == null){
+        info = <p>Class Not Found</p>
+    }
+    else if(classInfo){
         info = <div className="information">
         <p> {props.name}</p>
         <p> {classInfo.title} </p>
         <p> {classInfo.deparment} </p>
         <p>{classInfo.description}</p>
         </div>
-    }
-
-    else if (classInfo == null){
-        info = <p>Class Not Found</p>
     }
 
     else{

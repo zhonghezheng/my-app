@@ -36,7 +36,7 @@ function Home(props) {
                 )}
             </div>
 
-            <p>With  Graphql</p>
+            <div className = "graphql" ><p>With  Graphql</p></div>
             
             <div>
                 {favouriteClasses.map((favClass)=>
